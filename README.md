@@ -1,5 +1,7 @@
 # QuilrAI technical assessment
 
+[![Checks](https://github.com/SRAVANJAJAM/Quilrassessment/actions/workflows/ci.yml/badge.svg)](https://github.com/SRAVANJAJAM/Quilrassessment/actions/workflows/ci.yml)
+
 Four small Python components for the AI Field Developer assessment: a stdio MCP
 server, an authenticated MCP proxy, a streaming PII filter, and an LLM router with
 SQLite token accounting. The customer records and refunds are simulations.
@@ -147,8 +149,8 @@ docker compose up --build
 
 The image runs as a non-root user. Compose keeps the mock on its internal network
 and publishes only the gateway on loopback; SQLite lives in a named volume.
-The GitHub Actions workflow runs lint, tests, and the HTTP demo. Workflow results
-will only exist after this source is pushed.
+The GitHub Actions workflow runs lint, tests, and the HTTP demo on every push and
+pull request. The badge above links to the latest results.
 
 For deployment, start with [the operational checklist](docs/design.md#deployment-notes).
 The implementation is an assessment-sized reference with explicit limits, not

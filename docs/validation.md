@@ -13,6 +13,8 @@ mock providers; they are not latency or capacity claims for a live LLM service.
 | HTTP walkthrough against two real local server processes | Passed |
 | Docker image build from the hash-locked requirements | Passed |
 | Docker Compose HTTP request, redaction, and persistent SQLite volume | Passed as default UID 10001 |
+| Fresh clone of the published repository | 34 tests and the HTTP walkthrough passed |
+| GitHub Actions on the published implementation | Dependency installation, lint, 34 tests, and HTTP demo passed |
 
 The container test uses a non-root UID matching the read-only mounted review
 directory. A separate Compose run verifies the image's default UID 10001 and its
@@ -65,6 +67,6 @@ supplied. The generic adapter is tested with controlled HTTP responses and a
 running local provider. Before deployment, validate the selected providers'
 payload, streaming usage, token-framing assumptions, and authentication settings.
 
-GitHub Actions has been configured but has not run remotely before the initial
-push. The exact checks in the workflow were run locally. See the design notes
-for the limited PII pattern coverage and single-host SQLite deployment boundary.
+The published implementation passed [GitHub Actions run 42340385755](https://github.com/SRAVANJAJAM/Quilrassessment/actions/runs/42340385755).
+The workflow repeats these checks on each push and pull request. See the design
+notes for the limited PII pattern coverage and single-host SQLite deployment boundary.
