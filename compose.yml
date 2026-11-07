@@ -1,0 +1,21 @@
+services:
+  mock:
+    image: quilr-assessment:local
+    build: .
+    command: ["uvicorn", "quilr_assessment.mock_provider:app", "--host", "0.0.0.0", "--port", "9001"]
+  gateway:
+    image: quilr-assessment:local
+    build: .
+    env_file: .env
+    environment:
+      NO_PROXY: mock,127.0.0.1,localhost
+      no_proxy: mock,127.0.0.1,localhost
+      QUILR_DOWNSTREAM_URL: http://mock:9001/mcp
+      QUILR_PRIMARY_URL: http://mock:9001/primary/v1/chat/completions
+      QUILR_SECONDARY_URL: http://mock:9001/secondary/v1/chat/completions
+      QUILR_DATABASE_PATH: /app/data/usage.db
+    ports: ["127.0.0.1:8000:8000"]
+    volumes: ["usage:/app/data"]
+    depends_on: [mock]
+volumes:
+  usage:
