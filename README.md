@@ -1,10 +1,11 @@
-# QuilrAI technical assessment
+# QuilrAI Work Sample
 
 [![Checks](https://github.com/SRAVANJAJAM/Quilrassessment/actions/workflows/ci.yml/badge.svg)](https://github.com/SRAVANJAJAM/Quilrassessment/actions/workflows/ci.yml)
 
-Four small Python components for the AI Field Developer assessment: a stdio MCP
-server, an authenticated MCP proxy, a streaming PII filter, and an LLM router with
-SQLite token accounting. The customer records and refunds are simulations.
+This work sample was built for QuilrAI's AI Field Developer hiring exercise. It
+includes a stdio MCP server, an authenticated MCP proxy, a streaming PII filter,
+and an LLM router with SQLite token accounting. The customer records and refunds
+are simulations.
 
 ## Run the review in a few minutes
 
@@ -153,5 +154,5 @@ The GitHub Actions workflow runs lint, tests, and the HTTP demo on every push an
 pull request. The badge above links to the latest results.
 
 For deployment, start with [the operational checklist](docs/design.md#deployment-notes).
-The implementation is an assessment-sized reference with explicit limits, not
-a claim to reproduce QuilrAI's production security platform.
+The work sample is a standalone reference implementation with the limits
+outlined in the design notes.

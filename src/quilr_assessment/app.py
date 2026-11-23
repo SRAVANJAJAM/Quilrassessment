@@ -111,7 +111,7 @@ def create_app(settings: Settings | None = None, transport=None) -> FastAPI:
             app.state.router = Router(client, settings)
             yield
 
-    app = FastAPI(title="Quilr assessment gateway", version="0.1.0", lifespan=lifespan)
+    app = FastAPI(title="QuilrAI Work Sample", version="0.1.0", lifespan=lifespan)
     app.state.limiter = limiter
 
     @app.middleware("http")

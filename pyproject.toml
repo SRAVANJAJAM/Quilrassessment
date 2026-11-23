@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "quilr-assessment"
 version = "0.1.0"
-description = "MCP and LLM gateway assessment"
+description = "QuilrAI Work Sample for MCP and LLM gateways"
 requires-python = ">=3.12"
 dependencies = [
   "mcp==1.30.0", "fastapi==0.162.0", "httpx==0.28.1",
